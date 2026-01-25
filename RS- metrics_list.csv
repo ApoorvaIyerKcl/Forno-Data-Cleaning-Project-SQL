@@ -1,0 +1,16 @@
+Metric Name,Calculation Logic,Business Use Case
+Total Revenue,Sum of item_price multiplied by quantity,Overall sales performance
+Total Orders,Count of unique bill_identifier,Customer demand
+Average Order Value,Total Revenue divided by Total Orders,Pricing efficiency
+Total Items Sold,Sum of quantity,Volume tracking
+Top Selling Items,Items ranked by quantity sold,Menu optimization
+Least Selling Items,Items with lowest quantity sold,Menu cleanup
+Category-wise Revenue,Revenue grouped by item_category,Category performance
+Peak Sales Hour,Hour with highest revenue,Staff planning
+Peak Sales Day,Day with highest revenue,Operational planning
+Dine-in vs Takeaway Revenue,Revenue split by order_type,Channel performance
+Discount Impact,Revenue before discount minus after discount,Promotion analysis
+Repeat Customer Rate,Customers with more than one order,Customer loyalty
+Average Items per Order,Total Items Sold divided by Total Orders,Order behavior
+Menu Item Contribution %,Item revenue divided by total revenue,Menu profitability
+Revenue Growth Rate,Current period revenue minus previous period,Business growth
