@@ -1,0 +1,51 @@
+menu_item_id,menu_item_name,menu_category,veg_non_veg_flag,sauce_base,pasta_type,base_selling_price,is_chef_special,is_seasonal,is_active
+M1,Item_1,Pasta,Veg,,Spaghetti,450,Yes,Yes,Yes
+M2,Item_2,Beverage,Veg,,Spaghetti,232,Yes,Yes,Yes
+M3,Item_3,PASTA,Veg,,Penne,758,No,Yes,No
+M4,Item_4,Beverage,Non-Veg,Tomato,Penne,632,No,No,Yes
+M5,Item_5,PASTA,Non-Veg,Tomato,Penne,589,Yes,No,No
+M6,Item_6,Beverage,Non-Veg,Tomato,,670,Yes,No,Yes
+M7,Item_7,Beverage,Non-Veg,,,570,Yes,Yes,Yes
+M8,Item_8,PASTA,Non-Veg,Tomato,Penne,303,No,No,No
+M9,Item_9,pizza,Veg,Cream,Spaghetti,414,No,Yes,Yes
+M10,Item_10,Beverage,Veg,Tomato,Spaghetti,588,No,Yes,No
+M11,Item_11,Pasta,Veg,Tomato,Spaghetti,610,No,Yes,Yes
+M12,Item_12,Beverage,Non-Veg,Tomato,,711,No,No,Yes
+M13,Item_13,pizza,Veg,Tomato,,774,No,No,No
+M14,Item_14,pizza,Veg,Tomato,,705,Yes,Yes,Yes
+M15,Item_15,PASTA,Veg,,Spaghetti,265,No,No,No
+M16,Item_16,Beverage,Non-Veg,,Penne,317,No,No,Yes
+M17,Item_17,pizza,Non-Veg,Tomato,Spaghetti,203,No,Yes,Yes
+M18,Item_18,pizza,Veg,Tomato,Spaghetti,365,Yes,No,No
+M19,Item_19,Pasta,Veg,Cream,Spaghetti,445,Yes,Yes,Yes
+M20,Item_20,Pasta,Non-Veg,Tomato,,328,Yes,No,Yes
+M21,Item_21,pizza,Non-Veg,Tomato,,405,No,No,No
+M22,Item_22,Pizza ,Non-Veg,Tomato,Penne,430,Yes,No,Yes
+M23,Item_23,Beverage,Veg,,Penne,207,Yes,Yes,Yes
+M24,Item_24,Pasta,Veg,Cream,Penne,726,Yes,No,No
+M25,Item_25,PASTA,Veg,,,790,No,Yes,No
+M26,Item_26,Pizza ,Veg,Tomato,Penne,641,No,No,No
+M27,Item_27,Pizza ,Veg,,,300,Yes,No,No
+M28,Item_28,Pasta,Veg,Tomato,Penne,749,No,Yes,No
+M29,Item_29,PASTA,Non-Veg,Cream,Penne,277,No,Yes,Yes
+M30,Item_30,Beverage,Veg,Tomato,Penne,370,No,No,No
+M31,Item_31,PASTA,Non-Veg,Tomato,Penne,588,Yes,No,No
+M32,Item_32,Pizza ,Non-Veg,Cream,,769,No,Yes,Yes
+M33,Item_33,pizza,Veg,Tomato,,755,Yes,No,Yes
+M34,Item_34,Pasta,Non-Veg,,,361,Yes,Yes,Yes
+M35,Item_35,Pasta,Veg,,Penne,613,Yes,Yes,Yes
+M36,Item_36,Beverage,Veg,Cream,,797,No,No,Yes
+M37,Item_37,pizza,Veg,Cream,Spaghetti,334,No,No,No
+M38,Item_38,Pasta,Veg,Cream,,776,Yes,Yes,Yes
+M39,Item_39,Beverage,Non-Veg,Tomato,Spaghetti,270,Yes,No,No
+M40,Item_40,PASTA,Non-Veg,,,509,Yes,No,Yes
+M41,Item_41,PASTA,Non-Veg,Tomato,Penne,766,Yes,No,No
+M42,Item_42,Beverage,Veg,,Spaghetti,408,No,No,No
+M43,Item_43,Pasta,Veg,,Spaghetti,483,Yes,Yes,No
+M44,Item_44,PASTA,Non-Veg,Tomato,,652,No,Yes,Yes
+M45,Item_45,Pasta,Veg,,Penne,578,Yes,No,Yes
+M46,Item_46,Pasta,Non-Veg,Cream,Penne,566,Yes,Yes,Yes
+M47,Item_47,pizza,Non-Veg,,,358,Yes,Yes,Yes
+M48,Item_48,Pizza ,Veg,Tomato,,540,No,Yes,No
+M49,Item_49,PASTA,Veg,Cream,Penne,681,Yes,Yes,No
+M50,Item_50,pizza,Non-Veg,Tomato,Penne,224,Yes,No,No
