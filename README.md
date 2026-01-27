@@ -1,4 +1,4 @@
-# SQL Data Cleaning Project- ## Forno Italian Restaurant Sales Dataset
+# SQL Data Cleaning Project- Forno Italian Restaurant
 
 ## Overview
 
