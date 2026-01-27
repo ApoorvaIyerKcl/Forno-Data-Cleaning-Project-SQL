@@ -1,7 +1,7 @@
 USE restaurant_sales;
 DROP TABLE menu_items;
 CREATE TABLE menu_items( 
- menu_item_id VARCHAR(10),
+ menu_item_id VARCHAR(10) PRIMARY KEY,
  menu_item_name VARCHAR (50),
  menu_category VARCHAR (50),
  veg_non_veg_flag VARCHAR (50),
@@ -44,18 +44,6 @@ LOAD DATA INFILE 'C:/Apoorva/Acciojob/SQL/RS- bills.csv'
 INTO TABLE bills
 FIELDS TERMINATED BY ','
 IGNORE 1 ROWS;
-
-
-SELECT * FROM bills_duplicate1; 
-UPDATE bills_duplicate1
-SET order_date = DATE_FORMAT(STR_TO_DATE(order_date, '%Y-%m-%d'), '%d-%m-%Y')
-WHERE order_date IS NOT NULL AND order_date <> '';
-
-
-UPDATE bills_duplicate1
-SET DATE_FORMAT(order_date, '%d-%m-%Y') AS order_date;
-FROM bills_duplicate1;
-
 
 
 DROP TABLE bill_items;
@@ -112,7 +100,7 @@ SELECT * FROM bill_items_duplicate;
 
 -- FINDING and REMOVING DUPLICATES
 
--- Finding and removing DUPLICATES from bill_items_duplicate
+-- Finding and removing DUPLICATES from bill_items_duplicate1
 
 SELECT * FROM bill_items_duplicate;
 
@@ -120,6 +108,8 @@ SELECT * FROM ( SELECT *, ROW_NUMBER() OVER ( PARTITION BY order_item_id, bill_i
 quantity_ordered, unit_selling_price, item_subtotal_amount, preparation_time_minutes, item_notes, beverage_temperature) AS row_number_value
 FROM bill_items_duplicate) AS rank_value
 WHERE row_number_value > 1;
+
+
 
 CREATE TABLE `bill_items_duplicate1` (
   `order_item_id` varchar(50) DEFAULT NULL,
@@ -147,14 +137,21 @@ PARTITION BY order_item_id, bill_id, restaurant_location, menu_item_id, menu_cat
 item_subtotal_amount, preparation_time_minutes, item_notes, beverage_temperature) AS row_number_value 
 FROM bill_items_duplicate;
 
-SELECT * FROM bill_items_duplicate1
-WHERE row_number_value >1;
+SELECT * FROM ( 
+SELECT *, ROW_NUMBER () OVER (PARTITION BY order_item_id, bill_id, restaurant_location, menu_item_id, menu_category, quantity_ordered, unit_selling_price, 
+item_subtotal_amount, preparation_time_minutes, item_notes, beverage_temperature ORDER BY order_item_id) AS row_number_value 
+FROM bill_items_duplicate1
+WHERE row_number_value > 1;
+
+
+ALTER TABLE bill_items_duplicate1
+ADD PRIMARY KEY (order_item_id);
 
 DELETE 
 FROM bill_items_duplicate1
 WHERE row_number_value >1;
 
--- Finding and removing DUPLICATES from bills_duplicate
+-- Finding and removing DUPLICATES from bills_duplicate1
 
 SELECT * FROM ( SELECT *, ROW_NUMBER () OVER (PARTITION BY bill_id, customer_id, restaurant_location, order_date, order_time, day_name, 
 month_name, quarter, service_time_bucket, order_type, payment_method, order_status, refund_reason, total_quantity_ordered, bill_subtotal_amount,
@@ -187,13 +184,21 @@ SELECT *, ROW_NUMBER () OVER (PARTITION BY bill_id, customer_id, restaurant_loca
 month_name, quarter, service_time_bucket, order_type, payment_method, order_status, refund_reason, total_quantity_ordered, bill_subtotal_amount,
 tax_amount, total_bill_amount) AS row_number_value FROM bills_duplicate;
 
+SELECT * FROM bills_duplicate1
+WHERE row_number_value > 1 ;
+
+
 ALTER TABLE bills_duplicate2 RENAME bills_duplicate1;
 
-SELECT * FROM bills_duplicate1;
+SELECT * FROM bills_duplicate1
+WHERE row_number_value > 1;
 
 DELETE 
 FROM bills_duplicate1
 WHERE row_number_value >1;
+
+ALTER TABLE bills_duplicate1
+ADD PRIMARY KEY (bill_id);
 
 
 -- Finding and removing DUPLICATES from menu_items_duplicate
@@ -225,6 +230,17 @@ beverage_temperature = COALESCE(LOWER(NULLIF(TRIM(beverage_temperature), '')), '
 
 -- Standardising data for bills_duplicate1
 SELECT * FROM bills_duplicate1;
+
+
+SELECT * FROM bills_duplicate1; 
+UPDATE bills_duplicate1
+SET order_date = DATE_FORMAT(STR_TO_DATE(order_date, '%Y-%m-%d'), '%d-%m-%Y')
+WHERE order_date IS NOT NULL AND order_date <> '';
+
+
+UPDATE bills_duplicate1
+SET DATE_FORMAT(order_date, '%d-%m-%Y') AS order_date;
+FROM bills_duplicate1;
 
 
 UPDATE bills_duplicate1 
@@ -316,3 +332,4 @@ OR pasta_type IS NULL OR TRIM(pasta_type) = '';
 SELECT * FROM bills_duplicate1;
 SELECT * FROM bill_items_duplicate1;
 SELECT * FROM menu_items_duplicate;
+
